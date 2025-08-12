@@ -2,6 +2,7 @@
 Database models.
 """
 
+from hashlib import blake2b
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
@@ -51,6 +52,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name=_('Usuário é da equipe'),
         help_text=_('Indica que este usuário pode acessar o Admin.'),
     )
+    cpf = models.CharField(max_length=11, blank=True, null=True, verbose_name=_('cpf'), help_text=_('CPF'))
+    cep = models.CharField(max_length=8, blank=True, null=True, verbose_name=_('cep'), help_text=_('CEP'))
 
     objects = UserManager()
 
