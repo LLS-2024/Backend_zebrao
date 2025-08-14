@@ -2,7 +2,7 @@
 Database models.
 """
 
-from hashlib import blake2b
+
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
