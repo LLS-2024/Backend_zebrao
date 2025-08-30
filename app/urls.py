@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import (
@@ -13,12 +15,15 @@ from core.views import (
     ProdutoViewSet,
     UserViewSet,
 )
+from uploader.router import router as uploader_router
 
 router = DefaultRouter()
+
 router.register(r'categorias', CategoriaViewSet, basename='categorias')
 router.register(r'pessoas', PessoaViewSet, basename='pessoas')
 router.register(r'produtos', ProdutoViewSet, basename='produtos')
 router.register(r'users', UserViewSet, basename='users')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,6 +39,8 @@ urlpatterns = [
         SpectacularRedocView.as_view(url_name='schema'),
         name='redoc',
     ),
+     path("api/media/", include(uploader_router.urls)),
     # API
     path('api/', include(router.urls)),
 ]
+urlpatterns += static(settings.MEDIA_ENDPOINT, document_root=settings.MEDIA_ROOT)
