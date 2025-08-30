@@ -3,3 +3,4 @@ from .pessoa import Pessoa
 from .pessoa import Telefone
 from .pessoa import Endereco
 from .categoria import Categoria
+from .produto import Produto
