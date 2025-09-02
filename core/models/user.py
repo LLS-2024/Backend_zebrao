@@ -41,7 +41,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     """User model in the system."""
 
-    passage_id = models.CharField(max_length=255, unique=True, verbose_name=_('passage_id'), help_text=_('Passage ID'))
+    # passage_id = models.CharField(max_length=255, unique=True, verbose_name=_('passage_id'), help_text=_('Passage ID'))
     email = models.EmailField(max_length=255, unique=True, verbose_name=_('email'), help_text=_('Email'))
     name = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('name'), help_text=_('Username'))
     is_active = models.BooleanField(
@@ -65,3 +65,21 @@ class User(AbstractBaseUser, PermissionsMixin):
 
         verbose_name = 'Usuário'
         verbose_name_plural = 'Usuários'
+
+
+class Telefone(models.Model):
+    User = models.ForeignKey(User, on_delete=models.PROTECT, related_name='telefones')
+    numero = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.numero
+
+
+class Endereco(models.Model):
+    User = models.ForeignKey(User, on_delete=models.PROTECT, related_name='enderecos')
+    cep = models.CharField(max_length=10)
+    numero = models.CharField(max_length=10)
+    complemento = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return f"{self.cep} - {self.numero}"
