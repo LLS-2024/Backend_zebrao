@@ -11,7 +11,6 @@ from rest_framework.routers import DefaultRouter
 
 from core.views import (
     CategoriaViewSet,
-    PessoaViewSet,
     ProdutoViewSet,
     UserViewSet,
 )
@@ -20,7 +19,6 @@ from uploader.router import router as uploader_router
 router = DefaultRouter()
 
 router.register(r'categorias', CategoriaViewSet, basename='categorias')
-router.register(r'pessoas', PessoaViewSet, basename='pessoas')
 router.register(r'produtos', ProdutoViewSet, basename='produtos')
 router.register(r'users', UserViewSet, basename='users')
 
