@@ -21,9 +21,10 @@ class ProdutoSerializer(ModelSerializer):
 
 
 class ProdutoListSerializer(ModelSerializer):
+    imagem = ImageSerializer(required=False, read_only=True)
     class Meta:
         model = Produto
-        fields = ('id', 'descricao', 'preco')
+        fields = ('id', 'nome', 'preco', 'imagem')
 
 
 class ProdutoListRetrieveSerializer(ModelSerializer):
