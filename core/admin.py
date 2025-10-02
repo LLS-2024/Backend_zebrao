@@ -53,7 +53,22 @@ class UserAdmin(BaseUserAdmin):
     )
 
 
-admin.site.register(models.Categoria)
-# admin.site.register(models.Pessoa)
-admin.site.register(models.Produto)
+@admin.register(models.Categoria)
+class CategoriaAdmin(admin.ModelAdmin):
+    list_display = ('descricao',)
+    search_fields = ('descricao',)
+    list_filter = ('descricao',)
+    ordering = ('descricao',)
+    list_per_page = 10
+
+
+@admin.register(models.Produto)
+class ProdutoAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'descricao', 'preco', 'categoria', 'imagem')
+    search_fields = ('nome', 'descricao', 'categoria__descricao')
+    list_filter = ('categoria',)
+    ordering = ('nome',)
+    list_per_page = 25
+
+
 admin.site.register(models.User, UserAdmin)
