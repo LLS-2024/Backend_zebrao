@@ -1,7 +1,7 @@
 """
 Database models.
 """
-
+from uploader.models import Image
 
 from django.contrib.auth.models import (
     AbstractBaseUser,
@@ -51,6 +51,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         default=False,
         verbose_name=_('Usuário é da equipe'),
         help_text=_('Indica que este usuário pode acessar o Admin.'),
+    )
+    foto = models.ForeignKey(
+        Image,
+        related_name='user_foto',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        default=None,
     )
     cpf = models.CharField(max_length=11, blank=True, null=True, verbose_name=_('cpf'), help_text=_('CPF'))
     cep = models.CharField(max_length=8, blank=True, null=True, verbose_name=_('cep'), help_text=_('CEP'))
