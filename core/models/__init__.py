@@ -4,3 +4,4 @@ from .user import Endereco
 from .categoria import Categoria
 from .produto import Produto
 from .compra import Compra
+from .compra import ItensCompra
