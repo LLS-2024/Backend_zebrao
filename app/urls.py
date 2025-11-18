@@ -14,6 +14,8 @@ from core.views import (
     CompraViewSet,
     ProdutoViewSet,
     UserViewSet,
+    CarrinhoViewSet,
+    ItensCarrinhoViewSet,
 )
 from uploader.router import router as uploader_router
 
@@ -23,6 +25,8 @@ router.register(r'categorias', CategoriaViewSet, basename='categorias')
 router.register(r'compras', CompraViewSet, basename='compras')
 router.register(r'produtos', ProdutoViewSet, basename='produtos')
 router.register(r'users', UserViewSet, basename='users')
+router.register(r'carrinhos', CarrinhoViewSet, basename='carrinhos')
+router.register(r'itens-carrinho', ItensCarrinhoViewSet, basename='itens-carrinho')
 
 
 urlpatterns = [
