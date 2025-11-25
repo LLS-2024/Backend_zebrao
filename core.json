@@ -1177,44 +1177,7 @@
     "uploaded_on": "2025-10-03T12:20:42.046Z"
   }
 },
-{
-  "model": "core.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$1000000$WxnIOf1tqkrRdZCAj27XWw$Ygundj9BIwMIcPDtXBll2c7bZ07xrxas5OH4bhi+x4M=",
-    "last_login": "2025-10-27T19:03:13.148Z",
-    "is_superuser": true,
-    "passage_id": "324321544235435",
-    "email": "a@a.com",
-    "name": "Superusuário",
-    "is_active": true,
-    "is_staff": true,
-    "foto": null,
-    "cpf": null,
-    "cep": null,
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "core.user",
-  "pk": 2,
-  "fields": {
-    "password": "!guOeigiAEXjwTck0ZQ9oI58VjCo7jdEJhTzzyREJ",
-    "last_login": null,
-    "is_superuser": false,
-    "passage_id": "hdxkeqXbF8bp1Ql3dNJ0PoTB",
-    "email": "marcoandre@gmail.com",
-    "name": null,
-    "is_active": true,
-    "is_staff": false,
-    "foto": null,
-    "cpf": null,
-    "cep": null,
-    "groups": [],
-    "user_permissions": []
-  }
-},
+
 {
   "model": "core.user",
   "pk": 9,
