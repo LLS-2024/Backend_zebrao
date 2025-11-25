@@ -13,7 +13,7 @@ class ItensCompraSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ItensCompra
-        fields = ('produto', 'quantidade', 'total')
+        fields = ('id', 'produto', 'quantidade', 'total')
         depth = 1
 
 
@@ -38,7 +38,7 @@ class CompraCreateUpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Compra
-        fields = ('usuario', 'itens')
+        fields = ('usuario', 'itens', 'status')
 
     def create(self, validated_data):
         itens_data = validated_data.pop('itens')

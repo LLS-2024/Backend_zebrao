@@ -7,7 +7,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from core import models
-from core.models import Compra, ItensCompra, Carrinho, ItensCarrinho
+from core.models import Compra, ItensCompra
 
 
 class UserAdmin(BaseUserAdmin):
@@ -93,5 +93,3 @@ class ProdutoAdmin(admin.ModelAdmin):
 
 admin.site.register(models.User, UserAdmin)
 
-admin.site.register(Carrinho)
-admin.site.register(ItensCarrinho)
