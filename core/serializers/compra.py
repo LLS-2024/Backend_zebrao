@@ -14,7 +14,7 @@ class ItensCompraSerializer(serializers.ModelSerializer):
     class Meta:
         model = ItensCompra
         fields = ('id', 'produto', 'quantidade', 'total')
-        depth = 1
+        depth = 2
 
 
 class CompraSerializer(serializers.ModelSerializer):
