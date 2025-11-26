@@ -12,9 +12,9 @@ from rest_framework.routers import DefaultRouter
 from core.views import (
     CategoriaViewSet,
     CompraViewSet,
+    ItensCompraViewSet,
     ProdutoViewSet,
     UserViewSet,
-    ItensCompraViewSet,
 )
 from uploader.router import router as uploader_router
 
@@ -25,7 +25,6 @@ router.register(r'compras', CompraViewSet, basename='compras')
 router.register(r'produtos', ProdutoViewSet, basename='produtos')
 router.register(r'users', UserViewSet, basename='users')
 router.register(r'itens-compra', ItensCompraViewSet, basename='itens-compra')
-
 
 
 urlpatterns = [

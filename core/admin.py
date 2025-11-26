@@ -92,4 +92,3 @@ class ProdutoAdmin(admin.ModelAdmin):
 
 
 admin.site.register(models.User, UserAdmin)
-
